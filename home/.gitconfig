@@ -1,0 +1,24 @@
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[user]
+	name = Thom Allen
+	email = thom.j.allen@gmail.com
+[core]
+	excludesfile = /Users/thom/.gitignore_global
+	editor = subl -n -w
+	quotepath = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/thom/Library/Application Support/SourceTree/SourceTree 1.9.5/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	co = checkout
+	s = status
+[push]
+	default = matching
+[init]
+	templatedir = /Users/thom/.git-templates
